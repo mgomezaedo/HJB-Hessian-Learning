@@ -1,0 +1,92 @@
+function [val]=rhsric(t,P,trajectories)
+Y1 = trajectories{1};
+Y2 = trajectories{2};
+Y3 = trajectories{3};
+Y4 = trajectories{4};
+Y5 = trajectories{5};
+Y6 = trajectories{6};
+Y7 = trajectories{7};
+Y8 = trajectories{8};
+Y9 = trajectories{9};
+Y10 = trajectories{10};
+Y11 = trajectories{11};
+Y12 = trajectories{12};
+Y13 = trajectories{13};
+Y14 = trajectories{14};
+Y15 = trajectories{15};
+Y16 = trajectories{16};
+Y17 = trajectories{17};
+Y18 = trajectories{18};
+Y19 = trajectories{19};
+P1 = trajectories{20};
+P2 = trajectories{21};
+P3 = trajectories{22};
+P4 = trajectories{23};
+P5 = trajectories{24};
+P6 = trajectories{25};
+P7 = trajectories{26};
+P8 = trajectories{27};
+P9 = trajectories{28};
+P10 = trajectories{29};
+P11 = trajectories{30};
+P12 = trajectories{31};
+P13 = trajectories{32};
+P14 = trajectories{33};
+P15 = trajectories{34};
+P16 = trajectories{35};
+P17 = trajectories{36};
+P18 = trajectories{37};
+P19 = trajectories{38};
+
+y1 = Y1(t);
+y2 = Y2(t);
+y3 = Y3(t);
+y4 = Y4(t);
+y5 = Y5(t);
+y6 = Y6(t);
+y7 = Y7(t);
+y8 = Y8(t);
+y9 = Y9(t);
+y10 = Y10(t);
+y11 = Y11(t);
+y12 = Y12(t);
+y13 = Y13(t);
+y14 = Y14(t);
+y15 = Y15(t);
+y16 = Y16(t);
+y17 = Y17(t);
+y18 = Y18(t);
+y19 = Y19(t);
+p1 = P1(t);
+p2 = P2(t);
+p3 = P3(t);
+p4 = P4(t);
+p5 = P5(t);
+p6 = P6(t);
+p7 = P7(t);
+p8 = P8(t);
+p9 = P9(t);
+p10 = P10(t);
+p11 = P11(t);
+p12 = P12(t);
+p13 = P13(t);
+p14 = P14(t);
+p15 = P15(t);
+p16 = P16(t);
+p17 = P17(t);
+p18 = P18(t);
+p19 = P19(t);
+
+Hyp = Hyp_VdP(y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15, y16, y17, y18, y19, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19);
+Hpy = Hpy_VdP(y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15, y16, y17, y18, y19, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19);
+Hyy = Hyy_VdP(y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15, y16, y17, y18, y19, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19);
+Hpp = Hpp_VdP(y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15, y16, y17, y18, y19, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19);
+
+P=reshape(P,19,19);
+
+val = - Hyp*P - P*Hpy - P*Hpp*P - Hyy;
+val=val(:);
+
+
+
+
