@@ -1,6 +1,6 @@
 # Hessian-augmented Supervised Learning for Hamilton–Jacobi–Bellman PDEs
 
-Code accompanying the paper *"Hessian-augmented Supervised Learning for
+Companion code for the paper *"Hessian-augmented Supervised Learning for
 Hamilton–Jacobi–Bellman PDEs"* by M. Gómez-Aedo, B. Azmi, Y. Huang, D. Kalise,
 and K. Kunisch.
 
